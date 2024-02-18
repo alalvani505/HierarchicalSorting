@@ -1,7 +1,7 @@
 import csv
 
 from collections import defaultdict
-from src.logger import log
+from utils.logger import log
 
 
 class TreeNode:

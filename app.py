@@ -1,8 +1,7 @@
 import argparse
-import logging
 
-from src.logger import log
-from src.main.csvNodeSort import HierarchicalTree, compare
+from utils.logger import log
+from utils.csvNodeSort import HierarchicalTree, compare
 
 if __name__ == "__main__":  # pragma: no cover
     parser = argparse.ArgumentParser()
@@ -29,13 +28,13 @@ if __name__ == "__main__":  # pragma: no cover
     )
     parser.add_argument(
         "-v", "--verbose",
-        help="increase output verbosity",
+        help="Print sorted list to standard out",
         action="store_true"
     )
     args = parser.parse_args()
 
-    if args.verbose:
-        log.setLevel(logging.DEBUG)
+    # if args.verbose:
+    #     log.setLevel(logging.DEBUG)
 
     output = HierarchicalTree(args.file, "net_sales").sorted
     if args.verbose:

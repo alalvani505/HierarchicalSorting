@@ -1,8 +1,8 @@
-import time
 import unittest
+import time
 
 from definitions import DATA_DIR
-from src.main.csvNodeSort import HierarchicalTree, compare
+from utils.csvNodeSort import HierarchicalTree, compare
 
 
 def test_data_small_input():
@@ -33,7 +33,8 @@ def test_performance():
     starttime = time.time()
     runs = 1000
     for i in range(runs):
-        HierarchicalTree(in_file, "net_sales").sorted
+        # set it to something to get rid of commit warnings
+        s = HierarchicalTree(in_file, "net_sales").sorted
 
     print(f"total time for {runs} big sorts: ", round((time.time() - starttime), 2))
 
